@@ -1,0 +1,108 @@
+// SignUp.scss
+
+.custom-modal {
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-dialog {
+    margin: 0;
+  }
+
+  &-content {
+    padding: 15px;
+  }
+
+  &-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #007bff, #0056b3);
+      opacity: 0.7;
+    }
+
+    .custom-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+
+  &-title {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  &-body {
+    padding: 20px;
+
+    .custom-md-form {
+      margin-bottom: 20px;
+
+      .custom-icon-envelope,
+      .custom-icon-lock {
+        color: #007bff;
+      }
+
+      .custom-form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: #007bff;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .custom-btn-default {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
